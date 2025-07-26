@@ -1,4 +1,4 @@
-🔍 Tellonym Scrapping Tool Name yet to be decided!
+🔍 Tellonym-Scrapper Tellonym Scrapping Tool!
 
 This is a simple Python script to search for users on Tellonym.me by keywords or usernames. It interacts with Tellonym's backend API and extracts publicly available user data into a results.txt file.
 
