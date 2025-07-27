@@ -111,8 +111,8 @@ Active       : Yes
 
 🧪 Performance Note
 
-✅ This tool was tested with a names.txt file containing 14k search terms.
-⛔ After that point, the API rate-limited further requests. [After 917333 lines. Means approx. 91733 users were scrapped]
+✅ This tool was tested with a names.txt file containing 14k search terms.                                                                                        
+⛔ After that point, the API rate-limited further requests. [After 917333 lines. Means approx. 91733 users were scrapped]                                                      
 👉 Suggestion: Add delays or rotate proxies if you plan on scraping at scale.
 
 
