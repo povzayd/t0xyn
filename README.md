@@ -65,7 +65,7 @@ Option 1: Manual Input
 
 Run the script:
 ```
-python tell2.py
+python t0xyn.py
 
 Choose option 1 and enter comma-separated keywords:
 
@@ -84,7 +84,7 @@ Random Name
 ```
 Then run the script:
 ```
-python tell2.py
+python t0xyn.py
 
 Choose option 2 and enter the full file path:
 
@@ -111,7 +111,7 @@ Active       : Yes
 
 🧪 Performance Note
 
-✅ This tool was tested with a names.txt file containing 14k search terms.                                                                                        
+✅ This tool was tested with a names.txt file containing 14k search terms[Region specific!!].                                                                                        
 ⛔ After that point, the API rate-limited further requests. [After 917333 lines. Means approx. 91733 users were scrapped]                                                      
 👉 Suggestion: Add delays or rotate proxies if you plan on scraping at scale.
 
