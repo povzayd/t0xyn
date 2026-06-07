@@ -1,23 +1,24 @@
-
-import requests
 import os
+import time
+from curl_cffi import requests
 
 def search_tellonym(terms):
     url = "https://api.tellonym.me/search/users"
-
     headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         "Accept": "application/json",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-US,en;q=0.9",
         "Referer": "https://tellonym.me/",
-        "Tellonym-Client": "web:3.140.2",
-        "Content-Type": "application/json;charset=utf-8",
-        "Origin": "https://tellonym.me"
+        "Origin": "https://tellonym.me",
+        "Accept-Encoding": "gzip, deflate, br"
     }
 
     with open("results.txt", "w", encoding="utf-8") as f:
-        for term in terms:
+        for index, term in enumerate(terms):
+            #bypass ratelimitttttt
+            if index > 0:
+                time.sleep(1.5)
+
             print(f"[+] Searching: {term}")
             params = {
                 "searchString": term,
@@ -26,7 +27,9 @@ def search_tellonym(terms):
             }
 
             try:
-                response = requests.get(url, headers=headers, params=params)
+    
+                response = requests.get(url, headers=headers, params=params, impersonate="chrome")
+                
                 if response.status_code != 200:
                     print(f"[!] Failed for {term} (HTTP {response.status_code})")
                     continue
@@ -50,7 +53,7 @@ def search_tellonym(terms):
                     f.write("-" * 40 + "\n")
 
             except Exception as e:
-                print(f"[!] Error: {e}")
+                print(f"[!] Error processing {term}: {e}")
 
     print("\n[✓] All results saved to results.txt")
 
