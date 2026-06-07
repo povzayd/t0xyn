@@ -25,7 +25,7 @@ This is a simple Python script to search for users on Tellonym.me by keywords or
 
 Install dependencies using:
 
-`pip install requests`
+`pip install requests curl_cffi`
 
 
 ---
